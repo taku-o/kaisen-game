@@ -1,0 +1,22 @@
+{
+  "name": "kaisen-game",
+  "description": "海戦ゲーム（Battleship）の対戦型Webアプリケーション",
+  "language": "ja",
+  "phase": "design-approved",
+  "created_at": "2026-02-23",
+  "updated_at": "2026-02-23",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": true
+    },
+    "tasks": {
+      "generated": false,
+      "approved": false
+    }
+  }
+}
