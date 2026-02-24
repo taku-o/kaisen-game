@@ -36,11 +36,15 @@ lerna-debug.log*
 .DS_Store
 Thumbs.db
 
+# Claude Code
+.claude/worktrees
+
 # Test results
 test-results/
 playwright-report/
 
 # Serena
+.serena/memories/
 .serena/cache/
 .serena/logs/
 
