@@ -9,7 +9,7 @@ test.describe('ResultScreen', () => {
   // コンポーネントの表示テストは game-flow.spec.ts で統合テストとして実施
 
   test('should have return to title button functionality when result screen is shown', async ({
-    page,
+    _page,
   }) => {
     // このテストは game-flow.spec.ts の統合テストでカバーされる
     // 結果画面単体のテストは、実際に勝利条件を満たす必要があるため
@@ -24,7 +24,7 @@ test.describe('ResultScreen', () => {
   });
 
   test.describe('ResultScreen component verification', () => {
-    test('should have correct test ids defined in component', async ({ page }) => {
+    test('should have correct test ids defined in component', async ({ _page }) => {
       // ResultScreen コンポーネントに定義されている data-testid を確認
       // これは実装確認テスト
       // 実際のE2Eテストは game-flow.spec.ts で実施
