@@ -11,39 +11,39 @@
 ## 1. プロジェクト初期化
 
 ### 1.1 Vite + React + TypeScriptプロジェクトの作成
-- [ ] `npm create vite@latest`コマンドでReact + TypeScriptテンプレートを使用してプロジェクトを作成
-- [ ] 依存関係をインストール（`npm install`）
-- [ ] 開発サーバーが起動することを確認（`npm run dev`）
+- [x] `npm create vite@latest`コマンドでReact + TypeScriptテンプレートを使用してプロジェクトを作成
+- [x] 依存関係をインストール（`npm install`）
+- [x] 開発サーバーが起動することを確認（`npm run dev`）
 
 **対応要件**: 非機能要件 3.2（TypeScript使用、SPA実装）
 
 **依存**: なし
 
 ### (P) 1.2 ESLint/Prettierの設定
-- [ ] ESLintの設定ファイルを確認・調整
-- [ ] Prettierをインストールし設定（`npm install -D prettier`）
-- [ ] `.prettierrc`ファイルを作成
-- [ ] ESLintとPrettierの競合を解消（`eslint-config-prettier`のインストール）
+- [x] ESLintの設定ファイルを確認・調整
+- [x] Prettierをインストールし設定（`npm install -D prettier`）
+- [x] `.prettierrc`ファイルを作成
+- [x] ESLintとPrettierの競合を解消（`eslint-config-prettier`のインストール）
 
 **対応要件**: 非機能要件（コード品質維持）
 
 **依存**: タスク1.1
 
 ### (P) 1.3 テストフレームワークの設定
-- [ ] Vitestをインストール（`npm install -D vitest`）
-- [ ] `vitest.config.ts`を作成
-- [ ] Playwrightをインストール（`npm install -D @playwright/test`）
-- [ ] `playwright.config.ts`を作成
+- [x] Vitestをインストール（`npm install -D vitest`）
+- [x] `vitest.config.ts`を作成
+- [x] Playwrightをインストール（`npm install -D @playwright/test`）
+- [x] `playwright.config.ts`を作成
 
 **対応要件**: 非機能要件（テスト環境）
 
 **依存**: タスク1.1
 
 ### (P) 1.4 ディレクトリ構造の作成
-- [ ] `src/components/`ディレクトリを作成
-- [ ] `src/types/`ディレクトリを作成
-- [ ] `src/constants/`ディレクトリを作成
-- [ ] `src/utils/`ディレクトリを作成
+- [x] `src/components/`ディレクトリを作成
+- [x] `src/types/`ディレクトリを作成
+- [x] `src/constants/`ディレクトリを作成
+- [x] `src/utils/`ディレクトリを作成
 
 **対応要件**: 設計書 セクション6（ディレクトリ構造）
 
@@ -54,44 +54,44 @@
 ## 2. 型定義の実装
 
 ### 2.1 基本型の定義
-- [ ] `src/types/index.ts`ファイルを作成
-- [ ] `GamePhase`型を定義（'title' | 'placement' | 'battle' | 'result'）
-- [ ] `PlayerType`型を定義（'player1' | 'player2'）
-- [ ] `ShipType`型を定義（'carrier' | 'battleship' | 'cruiser' | 'submarine' | 'destroyer'）
-- [ ] `Orientation`型を定義（'horizontal' | 'vertical'）
+- [x] `src/types/index.ts`ファイルを作成
+- [x] `GamePhase`型を定義（'title' | 'placement' | 'battle' | 'result'）
+- [x] `PlayerType`型を定義（'player1' | 'player2'）
+- [x] `ShipType`型を定義（'carrier' | 'battleship' | 'cruiser' | 'submarine' | 'destroyer'）
+- [x] `Orientation`型を定義（'horizontal' | 'vertical'）
 
 **対応要件**: 設計書 セクション4.1〜4.7
 
 **依存**: タスク1.4
 
 ### 2.2 座標関連の型定義
-- [ ] `Row`型を定義（'A' | 'B' | ... | 'J'）
-- [ ] `Col`型を定義（1 | 2 | ... | 10）
-- [ ] `Coordinate`インターフェースを定義（row: Row, col: Col）
+- [x] `Row`型を定義（'A' | 'B' | ... | 'J'）
+- [x] `Col`型を定義（1 | 2 | ... | 10）
+- [x] `Coordinate`インターフェースを定義（row: Row, col: Col）
 
 **対応要件**: 設計書 セクション4.6、要件2-1
 
 **依存**: タスク2.1
 
 ### (P) 2.3 艦関連の型定義
-- [ ] `PlacedShip`インターフェースを定義（type, coordinates, hits）
-- [ ] `CellState`型を定義（'empty' | 'ship' | 'hit' | 'miss' | 'sunk'）
+- [x] `PlacedShip`インターフェースを定義（type, coordinates, hits）
+- [x] `CellState`型を定義（'empty' | 'ship' | 'hit' | 'miss' | 'sunk'）
 
 **対応要件**: 設計書 セクション4.8〜4.9、要件2-2
 
 **依存**: タスク2.2
 
 ### (P) 2.4 攻撃・対戦関連の型定義
-- [ ] `AttackRecord`インターフェースを定義（coordinate, result, sunkShip）
-- [ ] `AttackResult`インターフェースを定義（coordinate, isHit, isSunk, sunkShipType）
+- [x] `AttackRecord`インターフェースを定義（coordinate, result, sunkShip）
+- [x] `AttackResult`インターフェースを定義（coordinate, isHit, isSunk, sunkShipType）
 
 **対応要件**: 設計書 セクション4.10〜4.11、要件3-5〜3-9
 
 **依存**: タスク2.2, 2.3
 
 ### 2.5 状態管理の型定義
-- [ ] `PlayerState`インターフェースを定義（ships, attackRecords）
-- [ ] `GameState`インターフェースを定義（phase, currentPlayer, player1, player2, winner）
+- [x] `PlayerState`インターフェースを定義（ships, attackRecords）
+- [x] `GameState`インターフェースを定義（phase, currentPlayer, player1, player2, winner）
 
 **対応要件**: 設計書 セクション4.12〜4.13、要件6-1
 
@@ -102,27 +102,27 @@
 ## 3. 定数の実装
 
 ### (P) 3.1 艦関連の定数定義
-- [ ] `src/constants/index.ts`ファイルを作成
-- [ ] `SHIP_SIZES`定数を定義（各艦種のマス数）
-- [ ] `SHIP_NAMES`定数を定義（各艦種の日本語名）
-- [ ] 艦種の配列`SHIP_TYPES`を定義
+- [x] `src/constants/index.ts`ファイルを作成
+- [x] `SHIP_SIZES`定数を定義（各艦種のマス数）
+- [x] `SHIP_NAMES`定数を定義（各艦種の日本語名）
+- [x] 艦種の配列`SHIP_TYPES`を定義
 
 **対応要件**: 設計書 セクション4.4〜4.5、要件2-2
 
 **依存**: タスク2.1
 
 ### (P) 3.2 グリッド関連の定数定義
-- [ ] `GRID_ROWS`定数を定義（'A'〜'J'の配列）
-- [ ] `GRID_COLS`定数を定義（1〜10の配列）
-- [ ] `GRID_SIZE`定数を定義（10）
+- [x] `GRID_ROWS`定数を定義（'A'〜'J'の配列）
+- [x] `GRID_COLS`定数を定義（1〜10の配列）
+- [x] `GRID_SIZE`定数を定義（10）
 
 **対応要件**: 要件2-1
 
 **依存**: タスク2.2
 
 ### 3.3 初期状態の定数定義
-- [ ] `INITIAL_PLAYER_STATE`定数を定義
-- [ ] `INITIAL_GAME_STATE`定数を定義
+- [x] `INITIAL_PLAYER_STATE`定数を定義
+- [x] `INITIAL_GAME_STATE`定数を定義
 
 **対応要件**: 設計書 セクション4.14
 
@@ -133,32 +133,32 @@
 ## 4. ユーティリティ関数の実装
 
 ### 4.1 座標関連ユーティリティの実装
-- [ ] `src/utils/coordinate.ts`ファイルを作成
-- [ ] `isValidCoordinate`関数を実装（座標が有効か検証）
-- [ ] `coordinateToString`関数を実装（座標→文字列変換）
-- [ ] `stringToCoordinate`関数を実装（文字列→座標変換）
-- [ ] `isSameCoordinate`関数を実装（2座標の比較）
+- [x] `src/utils/coordinate.ts`ファイルを作成
+- [x] `isValidCoordinate`関数を実装（座標が有効か検証）
+- [x] `coordinateToString`関数を実装（座標→文字列変換）
+- [x] `stringToCoordinate`関数を実装（文字列→座標変換）
+- [x] `isSameCoordinate`関数を実装（2座標の比較）
 
 **対応要件**: 設計書 セクション7.3、要件2-8
 
 **依存**: タスク2.2, 3.2
 
 ### (P) 4.2 配置関連ユーティリティの実装
-- [ ] `src/utils/placement.ts`ファイルを作成
-- [ ] `calculateShipCoordinates`関数を実装（艦の占める座標リストを計算）
-- [ ] `canPlaceShip`関数を実装（配置可能か検証）
-- [ ] `areAllShipsPlaced`関数を実装（全艦配置済みか確認）
+- [x] `src/utils/placement.ts`ファイルを作成
+- [x] `calculateShipCoordinates`関数を実装（艦の占める座標リストを計算）
+- [x] `canPlaceShip`関数を実装（配置可能か検証）
+- [x] `areAllShipsPlaced`関数を実装（全艦配置済みか確認）
 
 **対応要件**: 設計書 セクション7.1、要件2-6, 2-8, 2-9, 2-10, 2-11
 
 **依存**: タスク2.3, 3.1, 4.1
 
 ### (P) 4.3 対戦関連ユーティリティの実装
-- [ ] `src/utils/battle.ts`ファイルを作成
-- [ ] `checkHit`関数を実装（攻撃が命中したか判定）
-- [ ] `checkSunk`関数を実装（艦が撃沈したか判定）
-- [ ] `checkAllSunk`関数を実装（全艦撃沈か判定）
-- [ ] `determineFirstPlayer`関数を実装（先攻プレイヤーを決定）
+- [x] `src/utils/battle.ts`ファイルを作成
+- [x] `checkHit`関数を実装（攻撃が命中したか判定）
+- [x] `checkSunk`関数を実装（艦が撃沈したか判定）
+- [x] `checkAllSunk`関数を実装（全艦撃沈か判定）
+- [x] `determineFirstPlayer`関数を実装（先攻プレイヤーを決定）
 
 **対応要件**: 設計書 セクション7.2、要件3-5〜3-9, 4-1, 4-2, 2-13
 
@@ -169,35 +169,35 @@
 ## 5. 基盤コンポーネントの実装
 
 ### (P) 5.1 Cellコンポーネントの実装
-- [ ] `src/components/Cell.tsx`ファイルを作成
-- [ ] `CellProps`インターフェースを定義
-- [ ] 各状態（empty, ship, hit, miss, sunk）に応じたスタイルを定義
-- [ ] クリックイベントのハンドリングを実装
-- [ ] disabled状態の制御を実装
+- [x] `src/components/Cell.tsx`ファイルを作成
+- [x] `CellProps`インターフェースを定義
+- [x] 各状態（empty, ship, hit, miss, sunk）に応じたスタイルを定義
+- [x] クリックイベントのハンドリングを実装
+- [x] disabled状態の制御を実装
 
 **対応要件**: 設計書 セクション3.7、要件2-6, 3-5, 3-6, 3-7
 
 **依存**: タスク2.2, 2.3
 
 ### 5.2 Gridコンポーネントの実装
-- [ ] `src/components/Grid.tsx`ファイルを作成
-- [ ] `GridProps`インターフェースを定義
-- [ ] 10×10のグリッドレイアウトを実装
-- [ ] 縦軸ラベル（A〜J）の表示を実装
-- [ ] 横軸ラベル（1〜10）の表示を実装
-- [ ] Cellコンポーネントを配置
-- [ ] セルクリックイベントの伝達を実装
+- [x] `src/components/Grid.tsx`ファイルを作成
+- [x] `GridProps`インターフェースを定義
+- [x] 10×10のグリッドレイアウトを実装
+- [x] 縦軸ラベル（A〜J）の表示を実装
+- [x] 横軸ラベル（1〜10）の表示を実装
+- [x] Cellコンポーネントを配置
+- [x] セルクリックイベントの伝達を実装
 
 **対応要件**: 設計書 セクション3.6、要件2-1, 3-1, 3-2
 
 **依存**: タスク5.1, 3.2
 
 ### (P) 5.3 Shipコンポーネントの実装
-- [ ] `src/components/Ship.tsx`ファイルを作成
-- [ ] `ShipProps`インターフェースを定義
-- [ ] 艦種名とサイズの表示を実装
-- [ ] 配置済み/未配置の状態表示を実装
-- [ ] 撃沈状態の表示を実装
+- [x] `src/components/Ship.tsx`ファイルを作成
+- [x] `ShipProps`インターフェースを定義
+- [x] 艦種名とサイズの表示を実装
+- [x] 配置済み/未配置の状態表示を実装
+- [x] 撃沈状態の表示を実装
 
 **対応要件**: 設計書 セクション3.8、要件2-2, 3-4
 
@@ -208,60 +208,60 @@
 ## 6. 画面コンポーネントの実装
 
 ### (P) 6.1 TitleScreenコンポーネントの実装
-- [ ] `src/components/TitleScreen.tsx`ファイルを作成
-- [ ] `TitleScreenProps`インターフェースを定義
-- [ ] ゲームタイトルの表示を実装
-- [ ] ゲーム開始ボタンの表示を実装
-- [ ] ゲーム開始ボタンクリック時のコールバック呼び出しを実装
+- [x] `src/components/TitleScreen.tsx`ファイルを作成
+- [x] `TitleScreenProps`インターフェースを定義
+- [x] ゲームタイトルの表示を実装
+- [x] ゲーム開始ボタンの表示を実装
+- [x] ゲーム開始ボタンクリック時のコールバック呼び出しを実装
 
 **対応要件**: 設計書 セクション3.2、要件1-1, 1-2, 1-3
 
 **依存**: タスク2.1
 
 ### (P) 6.2 PlacementScreenコンポーネントの実装
-- [ ] `src/components/PlacementScreen.tsx`ファイルを作成
-- [ ] `PlacementScreenProps`インターフェースを定義
-- [ ] 現在のプレイヤー（Player 1 / Player 2）表示を実装
-- [ ] Gridコンポーネントを配置
-- [ ] 配置する艦の一覧表示を実装（Shipコンポーネント使用）
-- [ ] 艦の選択機能を実装
-- [ ] 艦の向き切り替え機能（水平/垂直）を実装
-- [ ] グリッドクリック時の艦配置処理を実装
-- [ ] 配置バリデーション（境界線超え禁止、重複禁止）を実装
-- [ ] 配置確定ボタンの表示を実装
-- [ ] 配置確定ボタンの有効/無効制御を実装
-- [ ] 配置確定時のコールバック呼び出しを実装
+- [x] `src/components/PlacementScreen.tsx`ファイルを作成
+- [x] `PlacementScreenProps`インターフェースを定義
+- [x] 現在のプレイヤー（Player 1 / Player 2）表示を実装
+- [x] Gridコンポーネントを配置
+- [x] 配置する艦の一覧表示を実装（Shipコンポーネント使用）
+- [x] 艦の選択機能を実装
+- [x] 艦の向き切り替え機能（水平/垂直）を実装
+- [x] グリッドクリック時の艦配置処理を実装
+- [x] 配置バリデーション（境界線超え禁止、重複禁止）を実装
+- [x] 配置確定ボタンの表示を実装
+- [x] 配置確定ボタンの有効/無効制御を実装
+- [x] 配置確定時のコールバック呼び出しを実装
 
 **対応要件**: 設計書 セクション3.3、要件2-1〜2-13
 
 **依存**: タスク5.2, 5.3, 4.2
 
 ### (P) 6.3 BattleScreenコンポーネントの実装
-- [ ] `src/components/BattleScreen.tsx`ファイルを作成
-- [ ] `BattleScreenProps`インターフェースを定義
-- [ ] 現在のターン（Player 1 / Player 2）表示を実装
-- [ ] 攻撃記録グリッドの表示を実装（相手への攻撃結果）
-- [ ] 自陣グリッドの表示を実装（自分の艦と被弾状況）
-- [ ] 両プレイヤーの残存艦の状況表示を実装
-- [ ] 攻撃処理（グリッドクリック）を実装
-- [ ] 攻撃済みマスの再攻撃禁止を実装
-- [ ] 攻撃結果メッセージ（命中/ミス）表示を実装
-- [ ] 撃沈判定とメッセージ表示を実装
-- [ ] 勝敗判定を実装
-- [ ] ターン交代処理を実装
-- [ ] ターン交代時の画面切り替え（相手配置を隠す）を実装
-- [ ] 勝者決定時のコールバック呼び出しを実装
+- [x] `src/components/BattleScreen.tsx`ファイルを作成
+- [x] `BattleScreenProps`インターフェースを定義
+- [x] 現在のターン（Player 1 / Player 2）表示を実装
+- [x] 攻撃記録グリッドの表示を実装（相手への攻撃結果）
+- [x] 自陣グリッドの表示を実装（自分の艦と被弾状況）
+- [x] 両プレイヤーの残存艦の状況表示を実装
+- [x] 攻撃処理（グリッドクリック）を実装
+- [x] 攻撃済みマスの再攻撃禁止を実装
+- [x] 攻撃結果メッセージ（命中/ミス）表示を実装
+- [x] 撃沈判定とメッセージ表示を実装
+- [x] 勝敗判定を実装
+- [x] ターン交代処理を実装
+- [x] ターン交代時の画面切り替え（相手配置を隠す）を実装
+- [x] 勝者決定時のコールバック呼び出しを実装
 
 **対応要件**: 設計書 セクション3.4、要件3-1〜3-12, 4-1〜4-3
 
 **依存**: タスク5.2, 5.3, 4.3
 
 ### (P) 6.4 ResultScreenコンポーネントの実装
-- [ ] `src/components/ResultScreen.tsx`ファイルを作成
-- [ ] `ResultScreenProps`インターフェースを定義
-- [ ] 勝者（Player 1 / Player 2）の表示を実装
-- [ ] タイトルに戻るボタンの表示を実装
-- [ ] タイトルに戻るボタンクリック時のコールバック呼び出しを実装
+- [x] `src/components/ResultScreen.tsx`ファイルを作成
+- [x] `ResultScreenProps`インターフェースを定義
+- [x] 勝者（Player 1 / Player 2）の表示を実装
+- [x] タイトルに戻るボタンの表示を実装
+- [x] タイトルに戻るボタンクリック時のコールバック呼び出しを実装
 
 **対応要件**: 設計書 セクション3.5、要件5-1, 5-2, 5-3
 
@@ -272,31 +272,31 @@
 ## 7. Appコンポーネントの実装
 
 ### 7.1 状態管理の実装
-- [ ] `src/components/App.tsx`を編集
-- [ ] `GameState`を`useState`で管理
-- [ ] 初期状態として`INITIAL_GAME_STATE`を設定
+- [x] `src/components/App.tsx`を編集
+- [x] `GameState`を`useState`で管理
+- [x] 初期状態として`INITIAL_GAME_STATE`を設定
 
 **対応要件**: 設計書 セクション3.1, 5.1
 
 **依存**: タスク2.5, 3.3
 
 ### 7.2 画面遷移制御の実装
-- [ ] `phase`に応じた画面切り替えロジックを実装
-- [ ] タイトル画面→配置画面への遷移（`handleStartGame`）を実装
-- [ ] Player 1配置確定→Player 2配置画面への遷移（`handlePlayer1PlacementConfirm`）を実装
-- [ ] Player 2配置確定→対戦画面への遷移（`handlePlayer2PlacementConfirm`）を実装
-- [ ] 勝者決定→結果画面への遷移（`handleGameEnd`）を実装
-- [ ] 結果画面→タイトル画面への遷移（`handleReturnToTitle`）を実装
+- [x] `phase`に応じた画面切り替えロジックを実装
+- [x] タイトル画面→配置画面への遷移（`handleStartGame`）を実装
+- [x] Player 1配置確定→Player 2配置画面への遷移（`handlePlayer1PlacementConfirm`）を実装
+- [x] Player 2配置確定→対戦画面への遷移（`handlePlayer2PlacementConfirm`）を実装
+- [x] 勝者決定→結果画面への遷移（`handleGameEnd`）を実装
+- [x] 結果画面→タイトル画面への遷移（`handleReturnToTitle`）を実装
 
 **対応要件**: 設計書 セクション5.2、要件6-1〜6-6
 
 **依存**: タスク7.1, 6.1, 6.2, 6.3, 6.4
 
 ### 7.3 各画面コンポーネントの統合
-- [ ] TitleScreenコンポーネントの配置と props 設定
-- [ ] PlacementScreenコンポーネントの配置と props 設定
-- [ ] BattleScreenコンポーネントの配置と props 設定
-- [ ] ResultScreenコンポーネントの配置と props 設定
+- [x] TitleScreenコンポーネントの配置と props 設定
+- [x] PlacementScreenコンポーネントの配置と props 設定
+- [x] BattleScreenコンポーネントの配置と props 設定
+- [x] ResultScreenコンポーネントの配置と props 設定
 
 **対応要件**: 設計書 セクション3.1、要件6-1
 
@@ -307,22 +307,22 @@
 ## 8. スタイルの実装
 
 ### (P) 8.1 グローバルスタイルの実装
-- [ ] `src/index.css`を編集
-- [ ] 基本的なリセットスタイルを設定
-- [ ] フォント設定を追加
+- [x] `src/index.css`を編集
+- [x] 基本的なリセットスタイルを設定（Tailwind CSSで対応）
+- [x] フォント設定を追加（Tailwind CSSで対応）
 
 **対応要件**: 非機能要件（UIデザイン）
 
 **依存**: タスク1.1
 
 ### 8.2 各コンポーネントのスタイル実装
-- [ ] Cell.tsxにスタイルを追加
-- [ ] Grid.tsxにスタイルを追加
-- [ ] Ship.tsxにスタイルを追加
-- [ ] TitleScreen.tsxにスタイルを追加
-- [ ] PlacementScreen.tsxにスタイルを追加
-- [ ] BattleScreen.tsxにスタイルを追加
-- [ ] ResultScreen.tsxにスタイルを追加
+- [x] Cell.tsxにスタイルを追加（Tailwind CSSで実装）
+- [x] Grid.tsxにスタイルを追加（Tailwind CSSで実装）
+- [x] Ship.tsxにスタイルを追加（Tailwind CSSで実装）
+- [x] TitleScreen.tsxにスタイルを追加（Tailwind CSSで実装）
+- [x] PlacementScreen.tsxにスタイルを追加（Tailwind CSSで実装）
+- [x] BattleScreen.tsxにスタイルを追加（Tailwind CSSで実装）
+- [x] ResultScreen.tsxにスタイルを追加（Tailwind CSSで実装）
 
 **対応要件**: 非機能要件（UIデザイン）
 
@@ -333,41 +333,41 @@
 ## 9. テストの実装
 
 ### (P) 9.1 ユーティリティ関数のユニットテスト
-- [ ] `src/utils/coordinate.test.ts`を作成
-- [ ] `isValidCoordinate`のテストを実装
-- [ ] `coordinateToString`のテストを実装
-- [ ] `stringToCoordinate`のテストを実装
-- [ ] `isSameCoordinate`のテストを実装
-- [ ] `src/utils/placement.test.ts`を作成
-- [ ] `calculateShipCoordinates`のテストを実装
-- [ ] `canPlaceShip`のテストを実装
-- [ ] `areAllShipsPlaced`のテストを実装
-- [ ] `src/utils/battle.test.ts`を作成
-- [ ] `checkHit`のテストを実装
-- [ ] `checkSunk`のテストを実装
-- [ ] `checkAllSunk`のテストを実装
-- [ ] `determineFirstPlayer`のテストを実装
+- [x] `src/utils/coordinate.test.ts`を作成
+- [x] `isValidCoordinate`のテストを実装
+- [x] `coordinateToString`のテストを実装
+- [x] `stringToCoordinate`のテストを実装
+- [x] `isSameCoordinate`のテストを実装
+- [x] `src/utils/placement.test.ts`を作成
+- [x] `calculateShipCoordinates`のテストを実装
+- [x] `canPlaceShip`のテストを実装
+- [x] `areAllShipsPlaced`のテストを実装
+- [x] `src/utils/battle.test.ts`を作成
+- [x] `checkHit`のテストを実装
+- [x] `checkSunk`のテストを実装
+- [x] `checkAllSunk`のテストを実装
+- [x] `determineFirstPlayer`のテストを実装
 
 **対応要件**: 非機能要件（テスト）
 
 **依存**: タスク4.1, 4.2, 4.3, 1.3
 
 ### 9.2 Playwrightによる画面テスト
-- [ ] `tests/title-screen.spec.ts`を作成
-- [ ] タイトル画面の表示テストを実装
-- [ ] ゲーム開始ボタンのクリックテストを実装
-- [ ] `tests/placement-screen.spec.ts`を作成
-- [ ] 配置画面の表示テストを実装
-- [ ] 艦配置操作のテストを実装
-- [ ] 配置確定ボタンの有効/無効テストを実装
-- [ ] `tests/battle-screen.spec.ts`を作成
-- [ ] 対戦画面の表示テストを実装
-- [ ] 攻撃操作のテストを実装
-- [ ] `tests/result-screen.spec.ts`を作成
-- [ ] 結果画面の表示テストを実装
-- [ ] タイトルに戻るボタンのテストを実装
-- [ ] `tests/game-flow.spec.ts`を作成
-- [ ] ゲーム全体フローのE2Eテストを実装
+- [x] `tests/title-screen.spec.ts`を作成
+- [x] タイトル画面の表示テストを実装
+- [x] ゲーム開始ボタンのクリックテストを実装
+- [x] `tests/placement-screen.spec.ts`を作成
+- [x] 配置画面の表示テストを実装
+- [x] 艦配置操作のテストを実装
+- [x] 配置確定ボタンの有効/無効テストを実装
+- [x] `tests/battle-screen.spec.ts`を作成
+- [x] 対戦画面の表示テストを実装
+- [x] 攻撃操作のテストを実装
+- [x] `tests/result-screen.spec.ts`を作成
+- [x] 結果画面の表示テストを実装
+- [x] タイトルに戻るボタンのテストを実装
+- [x] `tests/game-flow.spec.ts`を作成
+- [x] ゲーム全体フローのE2Eテストを実装
 
 **対応要件**: 非機能要件（テスト）、要件1-1〜5-3
 
