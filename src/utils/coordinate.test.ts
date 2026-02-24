@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import type { Row, Col } from '../types';
 import {
   isValidCoordinate,
   coordinateToString,
@@ -15,9 +16,9 @@ describe('coordinate utilities', () => {
     });
 
     it('無効な座標を検出できる', () => {
-      expect(isValidCoordinate({ row: 'K' as any, col: 1 })).toBe(false);
-      expect(isValidCoordinate({ row: 'A', col: 11 as any })).toBe(false);
-      expect(isValidCoordinate({ row: 'A', col: 0 as any })).toBe(false);
+      expect(isValidCoordinate({ row: 'K' as unknown as Row, col: 1 })).toBe(false);
+      expect(isValidCoordinate({ row: 'A', col: 11 as unknown as Col })).toBe(false);
+      expect(isValidCoordinate({ row: 'A', col: 0 as unknown as Col })).toBe(false);
     });
   });
 
